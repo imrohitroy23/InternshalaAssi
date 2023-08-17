@@ -19,7 +19,12 @@ public class productServiceImpl implements Serviceproduct{
     @Autowired
     private ProductRepository productrepo;
 
-    @Override
+ 
+    public void addProduct(FoodItem product) {
+        
+        productrepo.save(product);
+    }
+    
     public List<FoodItem> searchProducts(String query) {
         
         Soundex soundex = new Soundex();
